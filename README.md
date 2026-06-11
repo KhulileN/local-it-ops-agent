@@ -29,8 +29,8 @@ Unlike traditional linear automation, this project utilizes an agentic reasoning
 
 1. Clone the repository:
    ```bash
-  git clone [https://github.com/KhulileN/local-it-ops-agent.git](https://github.com/KhulileN/local-it-ops-agent.git)
-  cd local-it-ops-agent
+git clone [https://github.com/KhulileN/local-it-ops-agent.git](https://github.com/KhulileN/local-it-ops-agent.git)
+cd local-it-ops-agent
   
 2. Configure Environment Variables
 Duplicate the provided .env.example template and create your own configuration file:
