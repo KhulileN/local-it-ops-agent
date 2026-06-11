@@ -33,14 +33,14 @@ Unlike traditional linear automation, this project utilizes an agentic reasoning
    cd your-repo-name
 Install dependencies:
 
-Bash
+```bash
 pip install crewai
 Download and start Ollama in the background:
 
-Bash
+```bash
 ollama run llama3.2:1b
 Execute the simulation:
 
-Bash
+```bash
 python agent.py
 
