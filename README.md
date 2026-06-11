@@ -29,26 +29,36 @@ Unlike traditional linear automation, this project utilizes an agentic reasoning
 
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/your-repo-name.git](https://github.com/YOUR_USERNAME/your-repo-name.git)
-   cd your-repo-name
-Install dependencies:
+  git clone [https://github.com/KhulileN/local-it-ops-agent.git](https://github.com/KhulileN/local-it-ops-agent.git)
+  cd local-it-ops-agent
+  
+2. Configure Environment Variables
+Duplicate the provided .env.example template and create your own configuration file:
 
 Bash
-pip install crewai
-Download and start Ollama in the background:
+cp .env.example .env
+(Alternatively, manually create a .env file in the root directory ensuring OLLAMA_BASE_URL and OLLAMA_MODEL point to your local service instance).
+
+3. Install Dependencies
+Ensure you have Python installed, then run:
+
+Bash
+pip install crewai python-dotenv
+4. Initialize the Local LLM
+Make sure Ollama is running on your machine, then pull and run the lightweight runtime engine in a separate terminal:
 
 Bash
 ollama run llama3.2:1b
-Execute the simulation:
+5. Execute the Simulation
+Run the core pipeline engine to witness the autonomous reasoning process stream directly to your terminal:
 
 Bash
 python agent.py
+📊 Sample Execution Logic Flow
+When a user passes an ambiguous complaint like "I can't connect to the corporate VPN from home," the local runner will orchestrate the following:
 
----
+Step 1: Invokes Query User Database to verify if the individual profile is active or locked in Active Directory.
 
-## 3. The "Next Step" Upgrade (To make it look even better)
-If you want to take this repository from a "good learning project" to a "wow, this person can build production agent systems" project, add a **User Interface**.
+Step 2: Invokes Check System Status API to dynamically query live cloud gateway routing metrics.
 
-Instead of running it strictly inside your terminal via `if __name__ == "__main__":`, you can install `streamlit` (`pip install streamlit`) and build a quick frontend chat screen in under 30 lines of code. 
-
-Showing an agent operating behind a clean UI where a user can type a problem and watch the terminal logs output onto a beautiful web app dashboard is the ultimate portfolio builder.
+Step 3: Detects network telemetry faults (e.g., 95% packet loss on US-West gateway) and automatically runs Log Production Ticket to inject a high-priority ticket tracking index into the DevOps dashboard backlog.
