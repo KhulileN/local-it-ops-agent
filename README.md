@@ -31,16 +31,35 @@ Unlike traditional linear automation, this project utilizes an agentic reasoning
    ```bash
    git clone [https://github.com/KhulileN/local-it-ops-agent.git](https://github.com/KhulileN/local-it-ops-agent.git)
    cd your-repo-name
-Install dependencies:
 
-```bash
-pip install crewai
-Download and start Ollama in the background:
+2. Configure Environment Variables
+Duplicate the provided .env.example template and create your own configuration file:
 
-```bash
+Bash
+cp .env.example .env
+(Alternatively, manually create a .env file in the root directory ensuring OLLAMA_BASE_URL and OLLAMA_MODEL point to your local service instance).
+
+3. Install Dependencies
+Ensure you have Python installed, then run:
+
+pip install crewai python-dotenv
+
+4. Initialize the Local LLM
+Make sure Ollama is running on your machine, then pull and run the lightweight runtime engine in a separate terminal:
+
 ollama run llama3.2:1b
-Execute the simulation:
 
-```bash
+5. Execute the Simulation
+Run the core pipeline engine to witness the autonomous reasoning process stream directly to your terminal:
+
 python agent.py
+
+📊 Sample Execution Logic Flow
+When a user passes an ambiguous complaint like "I can't connect to the corporate VPN from home," the local runner will orchestrate the following:
+
+Step 1: Invokes Query User Database to verify if the individual profile is active or locked in Active Directory.
+
+Step 2: Invokes Check System Status API to dynamically query live cloud gateway routing metrics.
+
+Step 3: Detects network telemetry faults (e.g., 95% packet loss on US-West gateway) and automatically runs Log Production Ticket to inject a high-priority ticket tracking index into the DevOps dashboard backlog.
 
